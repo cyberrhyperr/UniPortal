@@ -1,4 +1,3 @@
-// Scroll animation trigger
 function animateOnScroll() {
     const elements = document.querySelectorAll('[data-animate]');
     
@@ -13,49 +12,49 @@ function animateOnScroll() {
   }
   
   window.addEventListener('scroll', animateOnScroll);
-  animateOnScroll(); // Run once on load
+  animateOnScroll(); 
   
   document.addEventListener('DOMContentLoaded', function() {
-    // ============== SIDEBAR & NAVIGATION ==============
+     // sidebar & navigation
     const navItems = document.querySelectorAll('.nav-item');
     const sidebar = document.querySelector('.sidebar');
     const mobileMenuToggle = document.createElement('div');
     
-    // Create mobile menu toggle button
+    // menu toggle button
     mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
     mobileMenuToggle.classList.add('mobile-menu-toggle');
     document.body.appendChild(mobileMenuToggle);
     
-    // Mobile menu toggle functionality
+    // menu toggle functionality
     mobileMenuToggle.addEventListener('click', function() {
       sidebar.classList.toggle('active');
       this.classList.toggle('active');
     });
     
-    // Navigation item interactions
+    // navigation item interactions
     navItems.forEach(item => {
       item.addEventListener('click', function() {
         navItems.forEach(i => i.classList.remove('active'));
         this.classList.add('active');
         
-        // Add ripple effect
+        // ripple effect
         const ripple = document.createElement('span');
         ripple.classList.add('ripple-effect');
         this.appendChild(ripple);
         
-        // Remove ripple after animation
+        // remove ripple 
         setTimeout(() => {
           ripple.remove();
         }, 800);
       });
     });
   
-    // ============== NOTIFICATION SYSTEM ==============
+    // notifications
     const notificationBell = document.querySelector('.notification-bell');
     const notificationPanel = document.createElement('div');
     notificationPanel.classList.add('notification-panel');
     
-    // Sample notifications data
+    // notifications data
     const notifications = [
       {
         id: 1,
@@ -80,7 +79,7 @@ function animateOnScroll() {
       }
     ];
     
-    // Build notification panel
+    // notification panel
     notificationPanel.innerHTML = `
       <div class="notification-header">
         <h3>Notifications</h3>
@@ -132,7 +131,7 @@ function animateOnScroll() {
         notificationList.appendChild(notificationItem);
       });
       
-      // Add "no notifications" message if empty
+      //  "no notifications" message if empty
       if (notifications.length === 0) {
         notificationList.innerHTML = `
           <div class="no-notifications">
@@ -188,7 +187,7 @@ function animateOnScroll() {
     // Initial render
     renderNotifications();
   
-    // ============== COURSE INTERACTIONS ==============
+    // course interaction
     const courseCards = document.querySelectorAll('.course-card');
     
     courseCards.forEach(card => {
@@ -230,7 +229,7 @@ function animateOnScroll() {
       });
     });
   
-    // ============== MODAL SYSTEM ==============
+    //  modal system
     function showModal(title, content) {
       const modal = document.createElement('div');
       modal.classList.add('modal');
@@ -277,7 +276,7 @@ function animateOnScroll() {
       });
     }
   
-    // ============== REAL-TIME UPDATES ==============
+    // real-time updates
     // Simulate real-time updates
     setInterval(() => {
       // Randomly add new notifications (10% chance)
@@ -431,7 +430,7 @@ function animateOnScroll() {
       }
     });
   
-    // ============== ANIMATION HELPERS ==============
+    // animation helpers
     // Scroll animations
     function animateOnScroll() {
       const elements = document.querySelectorAll('[data-animate]');
@@ -447,7 +446,7 @@ function animateOnScroll() {
     }
     
     window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Run once on load
+    animateOnScroll(); 
     
     // Ripple effect
     document.addEventListener('click', function(e) {
@@ -471,7 +470,7 @@ function animateOnScroll() {
       }
     });
   
-    // ============== THEME TOGGLER ==============
+    // theme toggler
     const themeToggler = document.createElement('div');
     themeToggler.classList.add('theme-toggler');
     themeToggler.innerHTML = '<i class="fas fa-moon"></i>';
