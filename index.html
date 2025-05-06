@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --sidebar-bg: #222222;          /* Dark sidebar background */
-            --icon-color: #4350AF;          /* Blue icon color (#4350AF) */
-            --icon-hover: #5a67c9;          /* Lighter blue for hover */
-            --text-light: #ffffff;          /* White text */
-            --text-muted: #aaaaaa;          /* Light gray text */
-            --active-item: #2d2d2d;         /* Active menu item background */
-            --ripple-color: rgba(67, 80, 175, 0.3); /* Ripple effect color */
+            --sidebar-bg: #222222;         
+            --icon-color: #4350AF;         
+            --icon-hover: #5a67c9;         
+            --text-light: #ffffff;         
+            --text-muted: #aaaaaa;          
+            --active-item: #2d2d2d;         
+            --ripple-color: rgba(67, 80, 175, 0.3); 
             --primary: #2c3e50;
             --secondary: #3498db;
             --accent: #e74c3c;
@@ -41,9 +41,7 @@
             min-height: 100vh;
         }
         
-        /* ============= */
-        /* SIDEBAR       */
-        /* ============= */
+      
         .sidebar {
             background-color: var(--sidebar-bg);
             color: var(--text-light);
@@ -57,7 +55,7 @@
             flex-direction: column;
         }
 
-        /* Logo Container - REPLACE YOUR LOGO PNG HERE */
+       
         .logo-container {
             text-align: center;
             padding: 0 30px 30px;
@@ -76,7 +74,6 @@
             opacity: 0.9;
         }
 
-        /* Navigation Menu */
         .nav-menu {
             list-style: none;
             padding: 0 20px;
@@ -109,7 +106,6 @@
             font-size: 1rem;
         }
 
-        /* Icons - Colored #4350AF */
         .nav-link i {
             width: 24px;
             text-align: center;
@@ -124,7 +120,6 @@
             transform: scale(1.15);
         }
 
-        /* Main Content Styles */
         .main-content {
             padding: 20px;
             margin-left: 250px;
@@ -196,7 +191,6 @@
             justify-content: center;
         }
         
-        /* Dashboard Cards */
         .cards-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -261,7 +255,6 @@
             font-size: 0.9rem;
         }
         
-        /* Courses Section */
         .section-title {
             font-size: 1.3rem;
             margin-bottom: 20px;
@@ -443,7 +436,6 @@
             color: #777;
         }
         
-        /* Responsive Design */
         @media (max-width: 992px) {
             .dashboard {
                 grid-template-columns: 80px 1fr;
@@ -539,7 +531,6 @@
             }
         }
         
-        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -560,7 +551,6 @@
         
         .announcement-card { animation-delay: 0.5s; }
 
-        /* Ripple Effect */
         .ripple-effect {
             position: absolute;
             border-radius: 50%;
@@ -580,12 +570,11 @@
 </head>
 <body>
     <div class="dashboard">
-        <!-- Sidebar with dark background (#222222) -->
         <aside class="sidebar">
-            <!-- LOGO PLACEHOLDER - Replace src with your PNG logo path -->
+             
             <div class="logo-container">
                 <img src="images/logo.png" alt="University Logo" class="logo">
-                <!-- ^ Replace "university-logo.png" with your actual logo file -->
+                 
             </div>
 
             <ul class="nav-menu">
@@ -652,7 +641,6 @@
                 </div>
             </div>
 
-            <!-- Dashboard Cards -->
             <div class="cards-container">
                 <div class="card">
                     <div class="card-header">
@@ -704,7 +692,6 @@
                 </div>
             </div>
 
-            <!-- Current Courses -->
             <div class="courses">
                 <h2 class="section-title">
                     <i class="fas fa-book"></i>
@@ -795,7 +782,7 @@
                 </div>
             </div>
 
-            <!-- Announcements -->
+            
             <div class="announcements">
                 <h2 class="section-title">
                     <i class="fas fa-bullhorn"></i>
@@ -838,7 +825,7 @@
     </div>
 
     <script>
-        // Simple JavaScript for interactive elements
+        // js for interactive elements
         document.addEventListener('DOMContentLoaded', function() {
             // Toggle active state for nav items
             const navItems = document.querySelectorAll('.nav-item');
@@ -847,26 +834,22 @@
                     navItems.forEach(i => i.classList.remove('active'));
                     this.classList.add('active');
                     
-                    // Add ripple effect
                     const ripple = document.createElement('span');
                     ripple.classList.add('ripple-effect');
                     this.appendChild(ripple);
                     
-                    // Remove ripple after animation
                     setTimeout(() => {
                         ripple.remove();
                     }, 800);
                 });
             });
             
-            // Notification bell click
             const notificationBell = document.querySelector('.notification-bell');
             notificationBell.addEventListener('click', function() {
                 alert('You have 3 new notifications');
             });
             
-            // Course card buttons
-            const courseButtons = document.querySelectorAll('.course-actions .btn');
+             const courseButtons = document.querySelectorAll('.course-actions .btn');
             courseButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     e.stopPropagation();
@@ -881,7 +864,6 @@
                 });
             });
             
-            // Course card click
             const courseCards = document.querySelectorAll('.course-card');
             courseCards.forEach(card => {
                 card.addEventListener('click', function() {
